@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FOV Calculator</title>
     <style>
+        /* Add this new class for the input+unit wrapper */
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 4px; /* Space between number and "mm" */
+        }
+
+        /* Optional: Style the "mm" text */
+        .unit-label {
+            font-size: 12px;
+            font-weight: bold;
+            color: #555;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
@@ -88,17 +101,26 @@
 
         <div class="input-group pos-z">
             <label for="inputZ">Working Distance Z(mm)</label>
-            <input type="number" id="inputZ" value="100" step="10" min="0">
+            <div class="input-wrapper">
+                <input type="number" id="inputZ" value="100" step="10" min="0">
+                <span class="unit-label">mm</span>
+            </div>
         </div>
 
         <div class="input-group pos-x">
             <label for="outputX">FOV Size X(mm)</label>
-            <input type="number" id="outputX" value="0.00" readonly>
+            <div class="input-wrapper">
+                <input type="number" id="outputX" value="0.00" readonly>
+                <span class="unit-label">mm</span>
+            </div>
         </div>
 
         <div class="input-group pos-y">
             <label for="outputY">FOV Size Y(mm)</label>
-            <input type="number" id="outputY" value="0.00" readonly>
+            <div class="input-wrapper">
+                <input type="number" id="outputY" value="0.00" readonly>
+                <span class="unit-label">mm</span>
+            </div>
         </div>
     </div>
 
